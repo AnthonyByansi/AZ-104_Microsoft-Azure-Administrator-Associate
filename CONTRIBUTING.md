@@ -26,3 +26,11 @@ Thank you for considering contributing to the **AZ-104_Microsoft-Azure-Administr
 - If you're submitting code samples, ensure they are properly formatted and well-commented.
 - Respect the original author's style and voice when making contributions.
 - Review the [Code of Conduct]() before contributing. All interactions must be respectful and professional.
+
+## Code of Conduct
+Please review and adhere to our Code of Conduct to ensure a respectful and inclusive environment for all contributors and users.
+
+## Feedback and Questions
+If you have any questions or need clarification, feel free to create an issue or contact us. Your feedback is highly valuable as it helps us maintain the quality and accuracy of the repository.
+
+Thank you for your contributions!
