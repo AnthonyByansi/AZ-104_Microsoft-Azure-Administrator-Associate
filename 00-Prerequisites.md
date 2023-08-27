@@ -1,6 +1,6 @@
 # Prerequisites
 
-Before you dive into the comprehensive content of the AzureAdminPro repository, it's important to have a solid foundation in the following areas:
+Before you dive into the comprehensive content of the AZ-104_Microsoft-Azure-Administrator-Associate repo, it's important to have a solid foundation in the following areas:
 
 | Prerequisite                                          | Resource Link                                  |
 |-------------------------------------------------------|-----------------------------------------------|
