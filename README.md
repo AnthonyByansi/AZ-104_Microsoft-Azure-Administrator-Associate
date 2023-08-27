@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="insert_image_url_here" alt="AZ-104 Certification Badge">
+  <img src="imgs/azure-administrator-associate.png" alt="AZ-104 Certification Badge">
 </p>
 
 <h1 align="center">AZ-104 Certification Guide and DevOps Best Practices</h1>
