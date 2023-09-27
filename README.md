@@ -5,8 +5,7 @@
 <h1 align="center">AZ-104 Certification Guide and DevOps Best Practices</h1>
 
 <p align="center">
-  <a href="https://github.com/yourusername/AzureAdminPro/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/yourusername/AzureAdminPro"></a>
-  <a href="https://github.com/yourusername/AzureAdminPro/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/yourusername/AzureAdminPro"></a>
+  <a href="https://github.com/yourusername/AzureAdminPro/blob/main/LICENSE">
 </p>
 
 <p align="center">
