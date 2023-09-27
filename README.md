@@ -5,7 +5,7 @@
 <h1 align="center">AZ-104 Certification Guide and DevOps Best Practices</h1>
 
 <p align="center">
-  <a href="https://github.com/yourusername/AzureAdminPro/blob/main/LICENSE">
+  <a href="https://github.com/AnthonyByansi/AzureAdminPro/blob/main/LICENSE">
 </p>
 
 <p align="center">
