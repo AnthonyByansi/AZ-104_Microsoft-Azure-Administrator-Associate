@@ -1,6 +1,4 @@
-# **Static_Website_Hosting.md**
-
-#### **Hosting Static Websites with Azure Blob Storage**
+## **Hosting Static Websites with Azure Blob Storage**
 
 Azure Blob Storage simplifies static website hosting, offering scalable and cost-effective hosting for HTML, CSS, JavaScript, and other static assets.  
 

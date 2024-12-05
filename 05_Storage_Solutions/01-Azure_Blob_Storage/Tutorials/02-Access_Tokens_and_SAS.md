@@ -1,6 +1,4 @@
-# **Access_Tokens_and_SAS.md**
-
-#### **Understanding Access Tokens and SAS in Azure Blob Storage**
+## **Understanding Access Tokens and SAS in Azure Blob Storage**
 
 Azure Blob Storage leverages **Shared Access Signatures (SAS)** and **OAuth Tokens** for secure, time-limited access to resources. These mechanisms ensure granular control over access to storage containers, blobs, queues, and tables.
 

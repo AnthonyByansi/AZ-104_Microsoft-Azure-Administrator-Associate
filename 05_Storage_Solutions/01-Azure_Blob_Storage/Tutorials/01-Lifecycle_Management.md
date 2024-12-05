@@ -1,6 +1,4 @@
-# **Lifecycle_Management.md**
-
-#### **Lifecycle Management in Azure Blob Storage**
+## **Lifecycle Management in Azure Blob Storage**
 
 Azure Blob Storage supports **Lifecycle Management Policies**, enabling automated data tiering and deletion to optimize costs and meet compliance requirements. By defining rules, organizations can manage data transitions across storage tiers (Hot, Cool, and Archive) or schedule deletion of obsolete data.  
 
