@@ -46,6 +46,6 @@ Azure Blob Storage simplifies static website hosting, offering scalable and cost
 ---
 
 #### **Learn More**  
-- [Static Website Hosting Documentation](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)  
-- [Custom Domain and HTTPS Guide](https://learn.microsoft.com/en-us/azure/storage/blobs/custom-domain-https)  
-- [Azure Front Door Overview](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview)  
+- [Static Website Hosting Documentation](https://learn.microsoft.com/azure/storage/blobs/storage-blob-static-website?WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352)  
+- [Custom Domain and HTTPS Guide](https://learn.microsoft.com/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal&WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352)  
+- [Azure Front Door Overview](https://learn.microsoft.com/azure/frontdoor/front-door-overview?WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352)  
