@@ -8,12 +8,10 @@ resource "azurerm_storage_account" "file_storage" {
   location                 = "East US"
   account_tier             = "Premium"
   account_replication_type = "LRS"
-  kind                     = "FileStorage"
-  minimum_tls_version      = "TLS1_2"
 }
 
 resource "azurerm_storage_share" "file_share" {
   name                 = "myshare"
-  storage_account_name = azurerm_storage_account.file_storage.name
+  storage_account_id = azurerm_storage_account.file_storage.id
   quota                = 1024
 }
