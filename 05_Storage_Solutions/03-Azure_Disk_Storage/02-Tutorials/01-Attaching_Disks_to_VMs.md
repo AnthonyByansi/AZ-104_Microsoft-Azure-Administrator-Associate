@@ -32,7 +32,7 @@ New-AzSnapshot -ResourceGroupName "MyResourceGroup" -SnapshotName "MySnapshot" -
 ### **Portal Steps**
 1. Navigate to **Snapshots**.
 2. Select the snapshot > **Create Disk**.
-3. Attach the disk to a VM as described in [Attaching Disks to VMs](Attaching_Disks_to_VMs.md).
+3. Attach the disk to a VM as described in [Attaching Disks to VMs](./01-Attaching_Disks_to_VMs.md).
 
 ### **CLI**
 ```bash
@@ -42,7 +42,7 @@ az disk create \
   --source MySnapshot
 ```
 
-For details, visit [Azure Snapshots Documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-snapshots).
+For details, visit [Azure Snapshots Documentation](https://learn.microsoft.com/azure/backup/disk-backup-support-matrix?WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352).
 
 
 

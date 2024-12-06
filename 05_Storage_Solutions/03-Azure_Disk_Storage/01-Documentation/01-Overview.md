@@ -17,5 +17,5 @@ Azure Disk Storage is a high-performance, scalable block storage solution design
 | Premium SSD          | High performance         | Enterprise apps, transactional databases                                    |
 | Ultra Disk           | Ultra-high throughput    | Mission-critical databases, analytics                                       |
 
-For more details, visit the [Azure Disk Storage documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-overview).
+For more details, visit the [Azure Disk Storage documentation](https://learn.microsoft.com/azure/virtual-machines/managed-disks-overview?WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352).
 

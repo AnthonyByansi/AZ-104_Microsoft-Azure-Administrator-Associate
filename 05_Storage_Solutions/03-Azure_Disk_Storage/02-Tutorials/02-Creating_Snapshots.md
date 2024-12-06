@@ -48,7 +48,7 @@ Add-AzVMDataDisk -VMName "MyVM" -ResourceGroupName "MyResourceGroup" -Name "MyDi
 ## **Step 3: Format and Mount the Disk (Linux/Windows)**
 
 For formatting instructions, check:
-- [Linux Disk Initialization Guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/add-disk)
-- [Windows Disk Initialization Guide](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/attach-managed-disk)
+- [Linux Disk Initialization Guide](https://learn.microsoft.com/azure/virtual-machines/linux/add-disk?tabs=ubuntu&WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352)
+- [Windows Disk Initialization Guide](https://learn.microsoft.com/azure/virtual-machines/disks-redundancy?WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352)
 
 

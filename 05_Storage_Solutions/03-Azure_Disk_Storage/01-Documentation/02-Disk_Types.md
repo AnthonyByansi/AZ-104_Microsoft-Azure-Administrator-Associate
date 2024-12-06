@@ -16,4 +16,4 @@ Azure Disk Storage supports four main types of managed disks to cater to diverse
 - Deploy **Ultra Disk** for the most demanding workloads like SAP HANA or large-scale databases.
 
 ### Pricing
-Disk pricing varies based on type, size, and region. For up-to-date pricing, refer to the [Azure Disk Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/).
+Disk pricing varies based on type, size, and region. For up-to-date pricing, refer to the [Azure Disk Pricing Calculator](https://azure.microsoft.com/pricing/calculator/?WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352).

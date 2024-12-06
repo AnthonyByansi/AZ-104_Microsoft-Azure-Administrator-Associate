@@ -29,4 +29,4 @@ Azure Disk Storage is versatile and can accommodate diverse workloads across ind
 | **Gaming**            | High-performance game servers                  | Premium SSD              |
 | **Media & Entertainment** | Video editing and rendering workflows       | Premium SSD, Ultra Disk  |
 
-For implementation guidance, check the [Azure Disk Storage Use Case Documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-overview#use-cases).
+For implementation guidance, check the [Azure Disk Storage Use Case Documentation](https://learn.microsoft.com/azure/virtual-machines/disks-enable-ultra-ssd?tabs=azure-portal&WT.mc_id=%3Fwt.mc_id%3Dstudentamb_260352).

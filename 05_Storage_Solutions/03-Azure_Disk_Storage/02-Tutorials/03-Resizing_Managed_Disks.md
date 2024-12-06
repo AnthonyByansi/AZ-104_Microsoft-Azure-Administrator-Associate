@@ -44,5 +44,3 @@ Update-AzDisk -ResourceGroupName "MyResourceGroup" -DiskName "MyDisk" -DiskSizeG
 ---
 
 For more information, visit [Azure Disk Resizing Documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-resize).
-
-Let me know if you'd like any further refinements!
