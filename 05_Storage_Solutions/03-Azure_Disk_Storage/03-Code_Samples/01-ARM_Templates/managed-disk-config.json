@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "diskName": {
+        "type": "string",
+        "defaultValue": "myManagedDisk",
+        "metadata": {
+          "description": "The name of the managed disk."
+        }
+      },
+      "diskSizeGB": {
+        "type": "int",
+        "defaultValue": 128,
+        "metadata": {
+          "description": "The size of the managed disk in GB."
+        }
+      },
+      "diskSku": {
+        "type": "string",
+        "defaultValue": "Premium_LRS",
+        "allowedValues": [
+          "Standard_LRS",
+          "Premium_LRS",
+          "StandardSSD_LRS",
+          "UltraSSD_LRS"
+        ],
+        "metadata": {
+          "description": "The SKU of the managed disk."
+        }
+      }
+    },
+    "resources": [
+      {
+        "type": "Microsoft.Compute/disks",
+        "apiVersion": "2021-04-01",
+        "name": "[parameters('diskName')]",
+        "location": "[resourceGroup().location]",
+        "sku": {
+          "name": "[parameters('diskSku')]"
+        },
+        "properties": {
+          "diskSizeGB": "[parameters('diskSizeGB')]",
+          "creationData": {
+            "createOption": "Empty"
+          }
+        }
+      }
+    ]
+  }
+  
