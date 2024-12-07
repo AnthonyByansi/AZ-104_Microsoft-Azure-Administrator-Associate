@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Graph/users",
+      "apiVersion": "1.0",
+      "name": "[parameters('userName')]",
+      "properties": {
+        "displayName": "[parameters('displayName')]",
+        "mailNickname": "[parameters('mailNickname')]",
+        "userPrincipalName": "[parameters('userPrincipalName')]",
+        "passwordProfile": {
+          "password": "[parameters('password')]",
+          "forceChangePasswordNextSignIn": false
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Graph/groups",
+      "apiVersion": "1.0",
+      "name": "[parameters('groupName')]",
+      "properties": {
+        "displayName": "[parameters('groupDisplayName')]",
+        "securityEnabled": true,
+        "mailEnabled": false
+      }
+    }
+  ],
+  "parameters": {
+    "userName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the user to create."
+      }
+    },
+    "groupName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the group to create."
+      }
+    },
+    "displayName": {
+      "type": "string",
+      "metadata": {
+        "description": "User's display name."
+      }
+    },
+    "mailNickname": {
+      "type": "string",
+      "metadata": {
+        "description": "Mail nickname for the user."
+      }
+    },
+    "userPrincipalName": {
+      "type": "string",
+      "metadata": {
+        "description": "UPN of the user."
+      }
+    },
+    "password": {
+      "type": "string",
+      "metadata": {
+        "description": "Password for the user."
+      }
+    },
+    "groupDisplayName": {
+      "type": "string",
+      "metadata": {
+        "description": "Display name of the group."
+      }
+    }
+  }
+}

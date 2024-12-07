@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyDefinitions",
+      "apiVersion": "2021-06-01",
+      "name": "aad-conditional-access-policy",
+      "properties": {
+        "displayName": "Conditional Access Policy",
+        "description": "Enforces MFA for all users except for service accounts.",
+        "mode": "Indexed",
+        "policyRule": {
+          "if": {
+            "field": "Microsoft.AAD/securityGroup",
+            "notIn": [
+              "ServiceAccounts"
+            ]
+          },
+          "then": {
+            "effect": "EnforceMFA"
+          }
+        }
+      }
+    }
+  ]
+}
