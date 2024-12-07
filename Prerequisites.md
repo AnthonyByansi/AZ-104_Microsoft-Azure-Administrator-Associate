@@ -30,7 +30,3 @@ These prerequisites will provide you with essential knowledge and skills to full
 | Automate Azure tasks using scripts with PowerShell   | [Microsoft Learn - Automate Azure tasks using scripts with PowerShell](https://docs.microsoft.com/learn/modules/automate-azure-tasks-with-powershell/) |
 | Control Azure services with the CLI                   | [Microsoft Learn - Control Azure services with the Azure CLI](https://docs.microsoft.com/learn/modules/control-azure-services-with-cli/) |
 | Deploy Azure infrastructure by using JSON ARM templates | [Microsoft Learn - Deploy Azure infrastructure by using ARM templates](https://docs.microsoft.com/learn/modules/deploy-azure-resource-manager-templates/) |
-
-## Getting the Basics Right
-
-Before you embark on your learning journey through AzureAdminPro, make sure you've covered these prerequisites thoroughly. The provided resources will equip you with essential knowledge and skills to fully benefit from the content in this repository. If you're new to any of these topics, we recommend exploring the provided resources to ensure a strong understanding before progressing further.
