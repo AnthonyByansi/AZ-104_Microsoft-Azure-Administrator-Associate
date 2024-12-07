@@ -1,7 +1,7 @@
 # Replace with your storage account name and resource group
-$ResourceGroupName = "my-blob-storage-rg"
-$StorageAccountName = "mystorageaccount"
-$ContainerName = "mycontainer"
+$ResourceGroupName = "az-rg"
+$StorageAccountName = "az104storagedemo123"
+$ContainerName = "ecommerce"
 
 # Login to Azure
 Connect-AzAccount
