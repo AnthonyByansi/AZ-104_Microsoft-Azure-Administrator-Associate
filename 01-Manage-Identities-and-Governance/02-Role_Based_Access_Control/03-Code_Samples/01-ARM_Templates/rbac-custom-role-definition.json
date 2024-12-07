@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/roleDefinitions",
+            "apiVersion": "2018-01-01-preview",
+            "name": "[guid(subscription().id, parameters('roleName'))]",
+            "properties": {
+                "roleName": "[parameters('roleName')]",
+                "description": "[parameters('roleDescription')]",
+                "permissions": [
+                    {
+                        "actions": [
+                            "Microsoft.Compute/*/read",
+                            "Microsoft.Network/*/read",
+                            "Microsoft.Storage/*/read"
+                        ],
+                        "notActions": []
+                    }
+                ],
+                "assignableScopes": [
+                    "[subscription().id]"
+                ]
+            }
+        }
+    ],
+    "parameters": {
+        "roleName": {
+            "type": "string",
+            "metadata": {
+                "description": "Custom role name."
+            }
+        },
+        "roleDescription": {
+            "type": "string",
+            "metadata": {
+                "description": "Description for the custom role."
+            }
+        }
+    }
+}
