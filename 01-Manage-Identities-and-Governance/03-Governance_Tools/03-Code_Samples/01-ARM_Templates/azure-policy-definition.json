@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/policyDefinition.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policyDefinitions",
+            "apiVersion": "2021-06-01",
+            "name": "enforce-tagging-policy",
+            "properties": {
+                "displayName": "Enforce Tags on Resources",
+                "policyType": "Custom",
+                "mode": "Indexed",
+                "description": "Ensures that all resources have the required tags.",
+                "policyRule": {
+                    "if": {
+                        "not": {
+                            "field": "tags",
+                            "exists": true
+                        }
+                    },
+                    "then": {
+                        "effect": "modify",
+                        "details": {
+                            "field": "tags",
+                            "value": {
+                                "Environment": "Production",
+                                "Owner": "TeamA"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
