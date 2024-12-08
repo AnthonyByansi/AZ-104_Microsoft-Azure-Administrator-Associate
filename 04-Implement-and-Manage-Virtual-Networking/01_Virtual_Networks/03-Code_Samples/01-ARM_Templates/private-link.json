@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "type": "Microsoft.Network/privateEndpoints",
+            "apiVersion": "2021-02-01",
+            "name": "MyPrivateEndpoint",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "subnet": {
+                    "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'MyVNet', 'PrivateLinkSubnet')]"
+                },
+                "privateLinkServiceConnections": [
+                    {
+                        "name": "MyPrivateConnection",
+                        "properties": {
+                            "privateLinkServiceId": "[resourceId('Microsoft.Storage/storageAccounts', 'MyStorageAccount')]",
+                            "groupIds": [ "blob" ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
