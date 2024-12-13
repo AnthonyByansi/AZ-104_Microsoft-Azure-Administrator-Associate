@@ -1,0 +1,9 @@
+// Sample KQL query for filtering logs by condition
+let filteredLogs = azurelogs
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where OperationName == "Read"  // Filter by operation name
+    | where Status == "Success"  // Filter by status
+    | project TimeGenerated, Resource, OperationName, Status, Details;
+filteredLogs
+| order by TimeGenerated desc
+

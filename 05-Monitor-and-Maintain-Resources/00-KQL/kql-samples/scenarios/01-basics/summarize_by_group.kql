@@ -1,0 +1,7 @@
+// Sample KQL query for summarizing logs by group
+let summary = azurelogs
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | summarize Count = count(), AvgDuration = avg(Duration) by OperationName
+    | order by Count desc;
+summary
+
