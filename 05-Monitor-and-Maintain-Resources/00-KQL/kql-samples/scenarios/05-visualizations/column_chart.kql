@@ -1,0 +1,9 @@
+// Sample KQL query for creating a column chart
+let columnData = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "CPU Utilization"  // Filter by CPU utilization metric
+    | summarize AvgCPUUtilization = avg(Value) by bin(TimeGenerated, 1d)  // Calculate daily average CPU utilization
+    | project Day = format_datetime(TimeGenerated, "yyyy-MM-dd"), AvgCPUUtilization;
+columnData
+| render columnchart
+
