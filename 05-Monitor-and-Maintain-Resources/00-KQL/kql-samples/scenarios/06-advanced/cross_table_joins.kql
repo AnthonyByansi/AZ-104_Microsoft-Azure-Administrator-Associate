@@ -1,0 +1,18 @@
+// Sample KQL query for performing cross-table joins
+let metricsData = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName in ("CPU Utilization", "Memory Usage")  // Filter by multiple metrics
+    | project TimeGenerated, MetricName, Value, Unit;
+
+let logData = azurelogs
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where OperationName == "Login"  // Filter by specific operation
+    | project TimeGenerated, UserName, IPAddress, Details;
+
+let joinedData = metricsData
+    | join kind=inner (logData) on TimeGenerated
+    | project TimeGenerated, MetricName, Value, Unit, UserName, IPAddress, Details;
+joinedData
+| order by TimeGenerated desc
+| limit 100  // Display the latest 100 joined records
+
