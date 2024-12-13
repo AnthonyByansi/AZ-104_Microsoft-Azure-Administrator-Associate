@@ -1,0 +1,10 @@
+// Sample KQL query for slow operations monitoring
+let slowOperations = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "Duration"  // Filter by duration metric
+    | where Value > 5000  // Filter for metrics with value greater than 5000 milliseconds
+    | project TimeGenerated, MetricName, Value, Details;
+slowOperations
+| order by Value desc
+| limit 10  // Display the top 10 slowest operations
+

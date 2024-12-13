@@ -1,0 +1,10 @@
+// Sample KQL query for monitoring failed requests
+let failedRequests = azurelogs
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where OperationName == "API Request"  // Filter by specific operation type
+    | where Status == "Failed"  // Filter logs by failed status
+    | project TimeGenerated, Resource, OperationName, Status, ErrorCode, Details;
+failedRequests
+| order by TimeGenerated desc
+| limit 50  // Display the latest 50 failed requests
+

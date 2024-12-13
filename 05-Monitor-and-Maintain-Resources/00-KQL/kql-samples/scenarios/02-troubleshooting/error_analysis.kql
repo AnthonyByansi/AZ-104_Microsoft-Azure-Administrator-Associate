@@ -1,0 +1,9 @@
+// Sample KQL query for error analysis
+let errors = azurelogs
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where Level == "Error"  // Filter logs by error level
+    | project TimeGenerated, Message, ErrorCode, Details;
+errors
+| order by TimeGenerated desc
+| limit 100  // Display the latest 100 error logs
+
