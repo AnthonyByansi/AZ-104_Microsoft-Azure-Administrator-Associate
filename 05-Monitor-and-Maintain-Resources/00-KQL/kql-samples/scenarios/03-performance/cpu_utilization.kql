@@ -1,0 +1,9 @@
+// Sample KQL query for monitoring CPU utilization
+let cpuUtilization = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "CPU Utilization"  // Filter by CPU utilization metric
+    | project TimeGenerated, Resource, Value, Unit;
+cpuUtilization
+| order by TimeGenerated desc
+| limit 100  // Display the latest 100 CPU utilization records
+

@@ -1,0 +1,9 @@
+// Sample KQL query for monitoring memory trends
+let memoryTrends = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "Memory Used"  // Filter by memory usage metric
+    | project TimeGenerated, Value, Unit;
+memoryTrends
+| order by TimeGenerated desc
+| limit 100  // Display the latest 100 memory usage records
+

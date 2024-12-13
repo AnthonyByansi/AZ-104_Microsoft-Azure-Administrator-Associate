@@ -1,0 +1,9 @@
+// Sample KQL query for monitoring storage latency
+let storageLatency = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "Storage Read Latency" or MetricName == "Storage Write Latency"  // Filter by specific latency metrics
+    | project TimeGenerated, MetricName, Value, Unit, Details;
+storageLatency
+| order by TimeGenerated desc
+| limit 50  // Display the latest 50 storage latency records
+
