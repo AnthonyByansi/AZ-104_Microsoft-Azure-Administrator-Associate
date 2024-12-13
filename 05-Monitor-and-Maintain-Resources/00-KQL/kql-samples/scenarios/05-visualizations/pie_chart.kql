@@ -1,0 +1,9 @@
+// Sample KQL query for creating a pie chart
+let pieData = azurelogs
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where OperationName == "Login"  // Filter by specific operation
+    | count by Result  // Count occurrences by result status (e.g., Success, Failed)
+| project Result, Count;
+pieData
+| render piechart
+
