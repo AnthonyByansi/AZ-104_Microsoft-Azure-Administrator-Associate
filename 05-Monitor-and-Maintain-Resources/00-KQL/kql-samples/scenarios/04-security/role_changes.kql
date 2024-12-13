@@ -1,0 +1,9 @@
+// Sample KQL query for monitoring role changes
+let roleChanges = azureactivity
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where OperationName == "Modify Role"  // Filter by role change operations
+    | project TimeGenerated, UserName, RoleName, PreviousRole, Details;
+roleChanges
+| order by TimeGenerated desc
+| limit 50  // Display the latest 50 role change logs
+

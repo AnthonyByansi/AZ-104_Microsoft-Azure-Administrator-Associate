@@ -1,0 +1,9 @@
+// Sample KQL query for monitoring login attempts
+let loginAttempts = azureactivity
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where OperationName == "Login"  // Filter for login attempts
+    | project TimeGenerated, UserName, Result, IPAddress, Details;
+loginAttempts
+| order by TimeGenerated desc
+| limit 50  // Display the latest 50 login attempts
+

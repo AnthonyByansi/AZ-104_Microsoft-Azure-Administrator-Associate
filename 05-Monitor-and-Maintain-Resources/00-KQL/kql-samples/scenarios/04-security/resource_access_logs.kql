@@ -1,0 +1,9 @@
+// Sample KQL query for monitoring resource access
+let resourceAccess = azureactivity
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where OperationName == "Access Resource"  // Filter by access operations
+    | project TimeGenerated, UserName, ResourceName, AccessType, Details;
+resourceAccess
+| order by TimeGenerated desc
+| limit 50  // Display the latest 50 resource access logs
+
