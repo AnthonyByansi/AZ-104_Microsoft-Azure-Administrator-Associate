@@ -1,0 +1,11 @@
+// Sample KQL query for creating a time chart
+let timeData = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "CPU Utilization"  // Filter by CPU utilization metric
+    | summarize AvgValue = avg(Value) by bin(TimeGenerated, 1h)  // Calculate hourly average CPU utilization
+    | project Time = TimeGenerated, AverageCPUUtilization = AvgValue;
+timeData
+| order by Time asc
+| project Time, AverageCPUUtilization
+| render timechart
+
