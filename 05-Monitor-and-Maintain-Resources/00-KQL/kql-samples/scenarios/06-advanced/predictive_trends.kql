@@ -1,0 +1,13 @@
+// Sample KQL query for predictive trends
+let memoryData = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "Memory Usage"  // Filter by memory usage metric
+    | project TimeGenerated, Value;
+
+let forecastData = memoryData
+    | extend Forecast = movingaverage(Value, 10)  // Forecast memory usage using a 10-period moving average
+    | project TimeGenerated, Forecast;
+forecastData
+| order by TimeGenerated desc
+| limit 30  // Display the latest 30 forecast entries
+
