@@ -1,0 +1,13 @@
+// Sample KQL query for anomaly detection
+let cpuData = azuremetrics
+    | where Resource == "<resource_id>"  // Replace <resource_id> with your actual resource ID
+    | where MetricName == "CPU Utilization"  // Filter by CPU utilization metric
+    | project TimeGenerated, Value;
+
+let anomalyResult = cpuData
+    | where Value > quantile(0.95, Value)  // Detect values above the 95th percentile as anomalies
+    | project TimeGenerated, Value;
+anomalyResult
+| order by TimeGenerated desc
+| limit 50  // Display the latest 50 anomaly detections
+
