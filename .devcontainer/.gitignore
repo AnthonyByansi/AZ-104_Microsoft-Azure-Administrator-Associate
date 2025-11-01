@@ -1,0 +1,57 @@
+# Azure Resources
+*.azure/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Azure Functions
+local.settings.json
+bin/
+obj/
+
+# Bicep
+*.bicep.json
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

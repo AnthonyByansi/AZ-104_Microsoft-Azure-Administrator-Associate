@@ -1,0 +1,189 @@
+{
+  "name": "AZ-104 Azure Administrator Learning Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  
+  "features": {
+    // Azure CLI
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest",
+      "installBicep": true,
+      "extensions": "account,storage-preview,ssh"
+    },
+    
+    // PowerShell
+    "ghcr.io/devcontainers/features/powershell:1": {
+      "version": "latest"
+    },
+    
+    // Python for scripting and automation
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11",
+      "installTools": true
+    },
+    
+    // Node.js for Azure Functions development
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    
+    // Docker for container scenarios
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    },
+    
+    // Git
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    
+    // Terraform for IaC scenarios
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "latest"
+    },
+    
+    // kubectl for AKS scenarios
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "latest"
+    }
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Azure extensions
+        "ms-vscode.azure-account",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azureappservice",
+        "ms-azuretools.vscode-azurestorage",
+        "ms-azuretools.vscode-azurevirtualmachines",
+        "ms-azuretools.vscode-cosmosdb",
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        
+        // Bicep & ARM
+        "ms-azuretools.vscode-bicep",
+        "msazurermtools.azurerm-vscode-tools",
+        
+        // PowerShell
+        "ms-vscode.powershell",
+        
+        // Python
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        
+        // Terraform
+        "hashicorp.terraform",
+        
+        // YAML & JSON
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-azureterraform",
+        
+        // Git & GitHub
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        
+        // Markdown
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        
+        // REST Client for testing Azure APIs
+        "humao.rest-client",
+        
+        // Prettier for code formatting
+        "esbenp.prettier-vscode",
+        
+        // KQL syntax highlighting
+        "rosshamish.kuskus-kusto-syntax-highlighting",
+        
+        // Azure Pipelines
+        "ms-azure-devops.azure-pipelines",
+        
+        // Code Spell Checker
+        "streetsidesoftware.code-spell-checker"
+      ],
+      
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash",
+            "icon": "terminal-bash"
+          },
+          "pwsh": {
+            "path": "/usr/bin/pwsh",
+            "icon": "terminal-powershell"
+          }
+        },
+        
+        // Azure CLI settings
+        "azure.cloudShell.defaultLocation": "East US",
+        "azure.tenant": "",
+        
+        // Python settings
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "black",
+        
+        // PowerShell settings
+        "powershell.integratedConsole.showOnStartup": false,
+        
+        // Editor settings
+        "editor.formatOnSave": true,
+        "editor.minimap.enabled": true,
+        "editor.rulers": [80, 120],
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        
+        // Git settings
+        "git.autofetch": true,
+        "git.confirmSync": false,
+        
+        // Markdown settings
+        "markdown.preview.fontSize": 14,
+        "[markdown]": {
+          "editor.wordWrap": "on"
+        }
+      }
+    }
+  },
+  
+  // Post-create command to install additional tools
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  
+  // Forward ports for common Azure services
+  "forwardPorts": [
+    3000,  // Node.js apps
+    5000,  // Python Flask
+    7071,  // Azure Functions
+    8080,  // Web apps
+    5432,  // PostgreSQL
+    1433   // SQL Server
+  ],
+  
+  // Set environment variables
+  "remoteEnv": {
+    "AZURE_SUBSCRIPTION_ID": "${localEnv:AZURE_SUBSCRIPTION_ID}",
+    "AZURE_TENANT_ID": "${localEnv:AZURE_TENANT_ID}",
+    "AZURE_LOCATION": "eastus"
+  },
+  
+  // Mount the home directory to persist Azure credentials
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.azure,target=/home/vscode/.azure,type=bind,consistency=cached"
+  ],
+  
+  // User settings
+  "remoteUser": "vscode",
+  
+  // Container capabilities
+  "capAdd": [
+    "SYS_PTRACE"
+  ],
+  
+  "securityOpt": [
+    "seccomp=unconfined"
+  ]
+}
