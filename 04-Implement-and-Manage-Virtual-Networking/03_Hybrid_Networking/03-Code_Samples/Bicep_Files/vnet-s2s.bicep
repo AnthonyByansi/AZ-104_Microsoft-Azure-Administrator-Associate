@@ -48,7 +48,7 @@ resource vpnGateway 'Microsoft.Network/virtualNetworkGateways@2023-09-01' = {
         name: 'gw-ipconfig'
         properties: {
           subnet: {
-            id: resourceId('Microsoft.Network/virtualNetworks/subnets', vnet.name, 'GatewaySubnet')
+            id: '${vnet.id}/subnets/GatewaySubnet'
           }
           publicIPAddress: {
             id: publicIp.id
@@ -79,9 +79,11 @@ resource connection 'Microsoft.Network/connections@2023-09-01' = {
     connectionType: 'IPsec'
     virtualNetworkGateway1: {
       id: vpnGateway.id
+      properties: {}
     }
     localNetworkGateway2: {
       id: localGateway.id
+      properties: {}
     }
     sharedKey: 'ReplaceWithSecureKey'
   }
